@@ -10,15 +10,19 @@ $(document).ready(function() {
 		$("body").toggleClass("over");
 	});
 	$(window).on('scroll', function() {
-		if ($(window).scrollTop() > 150) {
-			$('.full-menu').css({ 'background-color': '#212121' });
-		}
-		if ($(window).scrollTop() > 150) {
-			$('.full-menu').css({ 'box-shadow': 'rgba(245, 241, 241, 0.99) 0px 3px 8px' });
-		} else {
-			$('.full-menu').css({ 'background-color': 'transparent' });
-		}
-	});
+    if ($(window).scrollTop() > 150) {
+        $('.full-menu').css({ 
+            'background-color': '#212121',
+            'box-shadow': 'rgba(245, 241, 241, 0.99) 0px 3px 8px'
+        });
+    } else {
+        $('.full-menu').css({ 
+            'background-color': 'initial',
+            'box-shadow': 'initial'
+        });
+    }
+});
+
 
 	$('.name-inp').on('input', function() {
 		if (/\d/.test($.trim($('.name-inp').val()))) {
